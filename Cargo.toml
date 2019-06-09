@@ -1,0 +1,14 @@
+[package]
+name = "Prag_prog_exercises"
+version = "0.1.0"
+authors = ["Alexander Wilkinson <alexwilkinson@gmail.com>"]
+
+[dependencies]
+
+[lib]
+name="main_lib"
+path="src/exercises/lib.rs"
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
