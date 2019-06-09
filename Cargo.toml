@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Alexander Wilkinson <alexwilkinson@gmail.com>"]
 
 [dependencies]
+rand = "0.6"
 
 [lib]
 name="main_lib"
