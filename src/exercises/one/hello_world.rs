@@ -4,8 +4,8 @@
  *
  * extra work:
  *  - No variables
- *  - Input and output should be different variables
- *  - create one of several different greatings
+ *  - Input and output should be different variables ✓
+ *  - create one of several different greatings ✓
  *
  */
 
@@ -15,6 +15,7 @@ pub mod hello_world {
   use std::io;
 
   pub fn main() {
+    println!("Greeting");
     println!("What is your name?");
 
     let mut user_name = String::new();
