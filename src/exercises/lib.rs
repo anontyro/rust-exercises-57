@@ -8,3 +8,6 @@ pub mod counting_char_main;
 
 #[path = "./three/printing_quotes.rs"]
 pub mod printing_quotes_main;
+
+#[path = "./four/mad_libs.rs"]
+pub mod mad_libs_main;
