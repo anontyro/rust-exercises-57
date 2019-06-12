@@ -11,3 +11,6 @@ pub mod printing_quotes_main;
 
 #[path = "./four/mad_libs.rs"]
 pub mod mad_libs_main;
+
+#[path = "./five/simple_calculator.rs"]
+pub mod simple_calculator_main;
