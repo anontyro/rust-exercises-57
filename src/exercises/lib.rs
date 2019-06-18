@@ -14,3 +14,6 @@ pub mod mad_libs_main;
 
 #[path = "./five/simple_calculator.rs"]
 pub mod simple_calculator_main;
+
+#[path = "../utils/general_utils.rs"]
+pub mod general_utils_main;
