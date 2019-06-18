@@ -20,7 +20,7 @@
  */
 
 pub mod mad_libs {
-  use std::io;
+  use general_utils_main::general_utils::get_user_input;
 
   struct WordTypes<'a> {
     noun: &'a str,
@@ -57,18 +57,6 @@ pub mod mad_libs {
     output = output.replace("ADVERB", words.adverb);
 
     return output;
-  }
-
-  fn get_user_input(prompt_msg: String) -> String {
-    let mut user_input = String::new();
-
-    println!("{}:", prompt_msg);
-
-    io::stdin()
-      .read_line(&mut user_input)
-      .expect("Unable to read user selection");
-
-    return user_input.trim().to_string();
   }
 
 }

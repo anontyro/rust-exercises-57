@@ -9,9 +9,17 @@
  */
 
 pub mod simple_calculator {
-  use std::io;
+  use general_utils_main::general_utils::get_number_from_input;
 
-  fn main() {
+  pub fn main() {
     println!("SIMPLE CALCULATOR");
+    let first_number = get_number_from_input("Enter the first number".to_string());
+    let second_number = get_number_from_input("Enter the Second number".to_string());
+
+    println!(
+      "first number: {}, second number: {}",
+      first_number, second_number
+    );
   }
+
 }
