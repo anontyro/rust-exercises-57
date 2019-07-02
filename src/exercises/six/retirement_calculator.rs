@@ -25,17 +25,32 @@ pub mod retirement_calculator {
     let when_to_retire: i32 =
       get_number_from_input("At what age would you like to retire?".to_string());
     let year_until_retirement: i32 = when_to_retire - user_age;
+
+    let output: String = get_output_string(year, year_until_retirement);
+    println!("{}", output);
+  }
+
+  fn get_output_string(year: i32, year_until_retirement: i32) -> String {
     let retirement_year: i32 = year + year_until_retirement;
 
     if year_until_retirement < 0 {
-      println!("You should already be retired since {}", retirement_year);
-    } else {
-      println!(
-        "You have {} years left until you can retire",
-        year_until_retirement
-      );
-      println!("It's {}, so you can retire in {}", year, retirement_year);
+      let retired: String = "You should already be retired! Since ".to_owned();
+      let output: String = retired + &retirement_year.to_string();
+
+      return output;
     }
+
+    let retired: String = "You have ".to_owned();
+    let years_left: &str = " years left until you can retire \nIt's ";
+    let retire_at: &str = ", so you can retire in ";
+
+    let output: String = retired
+      + &year_until_retirement.to_string()
+      + &years_left
+      + &year.to_string()
+      + &retire_at
+      + &retirement_year.to_string();
+    return output;
   }
 
 }
