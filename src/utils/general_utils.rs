@@ -19,11 +19,11 @@ pub mod general_utils {
     return user_input.trim().to_string();
   }
 
-  pub fn get_number_from_input(prompt_msg: String) -> u32 {
+  pub fn get_number_from_input(prompt_msg: String) -> i32 {
     let mut first_number = 0;
     let first_input = get_user_input(prompt_msg);
 
-    match first_input.parse::<u32>() {
+    match first_input.parse::<i32>() {
       Ok(val) => first_number = val,
       Err(_) => exit_program(),
     }
