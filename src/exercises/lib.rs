@@ -1,4 +1,5 @@
 extern crate rand;
+extern crate regex;
 
 #[path = "./one/hello_world.rs"]
 pub mod hello_main;
@@ -17,3 +18,9 @@ pub mod simple_calculator_main;
 
 #[path = "../utils/general_utils.rs"]
 pub mod general_utils_main;
+
+#[path = "./six/retirement_calculator.rs"]
+pub mod retirement_calculator_main;
+
+#[path = "./seven/area_rectangular_room.rs"]
+pub mod area_rectangular_room_main;
