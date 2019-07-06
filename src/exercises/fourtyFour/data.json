@@ -1,0 +1,7 @@
+{
+  "products": [{
+    "name": "Widget",
+    "price": 25.00,
+    "quantity": 7
+  }]
+}
