@@ -7,7 +7,6 @@ authors = ["Alexander Wilkinson <alexwilkinson@gmail.com>"]
 rand = "0.6"
 regex = "1.1.7"
 chrono = "0.4"
-reqwest = "0.9.18"
 
 [lib]
 name="main_lib"

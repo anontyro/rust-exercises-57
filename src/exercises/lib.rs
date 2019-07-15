@@ -25,3 +25,6 @@ pub mod retirement_calculator_main;
 
 #[path = "./seven/area_rectangular_room.rs"]
 pub mod area_rectangular_room_main;
+
+#[path = "./eight/pizza_party.rs"]
+pub mod pizza_party_main;
