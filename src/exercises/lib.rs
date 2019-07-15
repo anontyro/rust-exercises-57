@@ -31,3 +31,6 @@ pub mod pizza_party_main;
 
 #[path = "./nine/paint_calculator.rs"]
 pub mod paint_calculator_main;
+
+#[path = "./ten/self_checkout.rs"]
+pub mod self_checkout_main;
