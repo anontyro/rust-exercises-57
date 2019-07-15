@@ -28,3 +28,6 @@ pub mod area_rectangular_room_main;
 
 #[path = "./eight/pizza_party.rs"]
 pub mod pizza_party_main;
+
+#[path = "./nine/paint_calculator.rs"]
+pub mod paint_calculator_main;

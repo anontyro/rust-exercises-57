@@ -9,5 +9,6 @@ fn main() {
     // main_lib::simple_calculator_main::simple_calculator::main();
     // main_lib::retirement_calculator_main::retirement_calculator::main();
     // main_lib::area_rectangular_room_main::area_rectangular_room::main();
-    main_lib::pizza_party_main::pizza_party::main();
+    // main_lib::pizza_party_main::pizza_party::main();
+    main_lib::paint_calculator_main::paint_calculator::main();
 }
