@@ -11,5 +11,6 @@ fn main() {
     // main_lib::area_rectangular_room_main::area_rectangular_room::main();
     // main_lib::pizza_party_main::pizza_party::main();
     // main_lib::paint_calculator_main::paint_calculator::main();
-    main_lib::self_checkout_main::self_checkout::main();
+    // main_lib::self_checkout_main::self_checkout::main();
+    main_lib::currency_converter_main::currency_converter::main();
 }

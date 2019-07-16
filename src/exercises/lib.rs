@@ -34,3 +34,6 @@ pub mod paint_calculator_main;
 
 #[path = "./ten/self_checkout.rs"]
 pub mod self_checkout_main;
+
+#[path = "./eleven/currency_converter.rs"]
+pub mod currency_converter_main;
