@@ -13,8 +13,68 @@
  */
 
 pub mod currency_converter {
+  extern crate reqwest;
+  extern crate serde;
+  extern crate serde_derive;
+  extern crate serde_json;
+
+  use serde_derive::{Deserialize, Serialize};
+  use std::collections::HashMap;
+
+  #[derive(Serialize, Deserialize, Debug)]
+  struct CurrencyRates {
+    CAD: f64,
+    HKD: f64,
+    ISK: f64,
+    PHP: f64,
+    DKK: f64,
+    HUF: f64,
+    CZK: f64,
+    GBP: f64,
+    RON: f64,
+    SEK: f64,
+    IDR: f64,
+    INR: f64,
+    BRL: f64,
+    RUB: f64,
+    HRK: f64,
+    JPY: f64,
+    THB: f64,
+    CHF: f64,
+    EUR: f64,
+    MYR: f64,
+    BGN: f64,
+    TRY: f64,
+    CNY: f64,
+    NOK: f64,
+    NZD: f64,
+    ZAR: f64,
+    USD: f64,
+    MXN: f64,
+    SGD: f64,
+    AUD: f64,
+    ILS: f64,
+    KRW: f64,
+    PLN: f64,
+  }
+
+  #[derive(Serialize, Deserialize, Debug)]
+  struct ExchangeApi {
+    base: String,
+    date: String,
+    rates: CurrencyRates,
+  }
 
   pub fn main() {
     println!("CURRENCY CONVERTER");
+    get_currency_data().unwrap();
+  }
+
+  fn get_currency_data() -> Result<(), Box<std::error::Error>> {
+    let resp: ExchangeApi =
+      reqwest::get("https://api.exchangeratesapi.io/latest?base=SGD")?.json()?;
+    println!("{:?}", resp);
+
+    Ok(())
   }
 }
