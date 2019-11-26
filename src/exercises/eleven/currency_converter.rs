@@ -18,8 +18,8 @@ pub mod currency_converter {
   extern crate serde_derive;
   extern crate serde_json;
 
+  use general_utils_main::general_utils::get_user_input;
   use serde_derive::{Deserialize, Serialize};
-  use std::collections::HashMap;
 
   #[derive(Serialize, Deserialize, Debug)]
   struct CurrencyRates {
@@ -67,14 +67,27 @@ pub mod currency_converter {
 
   pub fn main() {
     println!("CURRENCY CONVERTER");
-    get_currency_data().unwrap();
+    let mut current_base = "SGD";
+
+    let user_msg = format!(
+      "{}:{} {}",
+      "current base is set to", current_base, "update to any three digit ISO currency"
+    );
+    let user_base = get_user_input(user_msg).to_uppercase();
+
+    current_base = &user_base;
+
+    let rates = get_currency_data(current_base).unwrap();
+    println!("{:?}", rates);
   }
 
-  fn get_currency_data() -> Result<(), Box<std::error::Error>> {
-    let resp: ExchangeApi =
-      reqwest::get("https://api.exchangeratesapi.io/latest?base=SGD")?.json()?;
-    println!("{:?}", resp);
+  fn get_currency_data(base: &str) -> Result<CurrencyRates, Box<std::error::Error>> {
+    let request_url = "https://api.exchangeratesapi.io/latest?base";
+    let url = format!("{}={}", request_url, base);
+    println!("{}", url);
+    let resp: ExchangeApi = reqwest::get(&url)?.json()?;
+    let rates: CurrencyRates = resp.rates;
 
-    Ok(())
+    Ok(rates)
   }
 }
