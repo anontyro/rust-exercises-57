@@ -20,6 +20,7 @@ pub mod currency_converter {
 
   use general_utils_main::general_utils::{get_float_from_input, get_user_input};
   use serde_derive::{Deserialize, Serialize};
+  use std::thread;
 
   #[derive(Serialize, Deserialize, Debug)]
   struct CurrencyRates {
@@ -70,20 +71,20 @@ pub mod currency_converter {
     let mut current_base = "SGD";
 
     let user_msg = format!(
-      "{}:{} {}",
-      "current base is set to", current_base, "update to any three digit ISO currency"
+      "current base is set to: {} update to any three digit ISO currency",
+      current_base
     );
     let user_base = get_user_input(user_msg).to_uppercase();
+    current_base = &user_base;
+    let rates = get_currency_data(current_base).unwrap();
+
+    let user_amount = get_float_from_input("Enter amount to convert".to_string());
     let user_conversion_currency =
       get_user_input("Enter 3 digit ISO currency code to convert to".to_string()).to_uppercase();
-    let user_amount = get_float_from_input("Enter amount to convert".to_string());
-    current_base = &user_base;
 
-    let rates = get_currency_data(current_base).unwrap();
     let selected_rate = get_selected_conversion_rate(&user_conversion_currency, &rates);
     let new_currency_amount = calculate_new_currency_amount(user_amount, selected_rate);
 
-    // println!("{:?}", rates);
     println!(
       "You are converting {} {} to a new rate of {:.2} {}",
       user_amount, current_base, new_currency_amount, user_conversion_currency
@@ -98,6 +99,7 @@ pub mod currency_converter {
     let rates: CurrencyRates = resp.rates;
 
     Ok(rates)
+    // Err("Unable to call API")
   }
 
   fn get_selected_conversion_rate(currency_iso: &str, rates: &CurrencyRates) -> f32 {
@@ -105,17 +107,13 @@ pub mod currency_converter {
       "USD" => rates.USD as f32,
       "SGD" => rates.SGD as f32,
       "GBP" => rates.GBP as f32,
-      _ => panic!("unknown field"),
+      "EUR" => rates.EUR as f32,
+      _ => panic!("Unknown currency or the developer was too lazy to add it in here..."),
     }
   }
 
   fn calculate_new_currency_amount(amount_to_convert: f32, selected_rate: f32) -> f32 {
     amount_to_convert * selected_rate
   }
-
-  // fn calculate_currency_amount(rates: CurrencyRates, currencyTo: IsoCurrencyCodes, amountToConvert: f32) {
-  //   let conversionRate = rates[currencyTo];
-
-  // }
 
 }
