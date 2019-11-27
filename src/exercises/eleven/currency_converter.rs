@@ -18,7 +18,7 @@ pub mod currency_converter {
   extern crate serde_derive;
   extern crate serde_json;
 
-  use general_utils_main::general_utils::get_user_input;
+  use general_utils_main::general_utils::{get_float_from_input, get_user_input};
   use serde_derive::{Deserialize, Serialize};
 
   #[derive(Serialize, Deserialize, Debug)]
@@ -74,11 +74,20 @@ pub mod currency_converter {
       "current base is set to", current_base, "update to any three digit ISO currency"
     );
     let user_base = get_user_input(user_msg).to_uppercase();
-
+    let user_conversion_currency =
+      get_user_input("Enter 3 digit ISO currency code to convert to".to_string()).to_uppercase();
+    let user_amount = get_float_from_input("Enter amount to convert".to_string());
     current_base = &user_base;
 
     let rates = get_currency_data(current_base).unwrap();
-    println!("{:?}", rates);
+    let selected_rate = get_selected_conversion_rate(&user_conversion_currency, &rates);
+    let new_currency_amount = calculate_new_currency_amount(user_amount, selected_rate);
+
+    // println!("{:?}", rates);
+    println!(
+      "You are converting {} {} to a new rate of {:.2} {}",
+      user_amount, current_base, new_currency_amount, user_conversion_currency
+    );
   }
 
   fn get_currency_data(base: &str) -> Result<CurrencyRates, Box<std::error::Error>> {
@@ -90,4 +99,23 @@ pub mod currency_converter {
 
     Ok(rates)
   }
+
+  fn get_selected_conversion_rate(currency_iso: &str, rates: &CurrencyRates) -> f32 {
+    match currency_iso {
+      "USD" => rates.USD as f32,
+      "SGD" => rates.SGD as f32,
+      "GBP" => rates.GBP as f32,
+      _ => panic!("unknown field"),
+    }
+  }
+
+  fn calculate_new_currency_amount(amount_to_convert: f32, selected_rate: f32) -> f32 {
+    amount_to_convert * selected_rate
+  }
+
+  // fn calculate_currency_amount(rates: CurrencyRates, currencyTo: IsoCurrencyCodes, amountToConvert: f32) {
+  //   let conversionRate = rates[currencyTo];
+
+  // }
+
 }
