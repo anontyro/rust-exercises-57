@@ -10,6 +10,7 @@
  * extras
  *  - make external api call to get data
  *  - store the values to be used for converting
+ *  To consider using threads to pull the api data in the background
  */
 
 pub mod currency_converter {
@@ -20,7 +21,7 @@ pub mod currency_converter {
 
   use general_utils_main::general_utils::{get_float_from_input, get_user_input};
   use serde_derive::{Deserialize, Serialize};
-  use std::thread;
+  // use std::thread;
 
   #[derive(Serialize, Deserialize, Debug)]
   struct CurrencyRates {
@@ -91,7 +92,7 @@ pub mod currency_converter {
     );
   }
 
-  fn get_currency_data(base: &str) -> Result<CurrencyRates, Box<std::error::Error>> {
+  fn get_currency_data(base: &str) -> Result<CurrencyRates, Box<dyn std::error::Error>> {
     let request_url = "https://api.exchangeratesapi.io/latest?base";
     let url = format!("{}={}", request_url, base);
     println!("{}", url);
@@ -115,5 +116,4 @@ pub mod currency_converter {
   fn calculate_new_currency_amount(amount_to_convert: f32, selected_rate: f32) -> f32 {
     amount_to_convert * selected_rate
   }
-
 }
