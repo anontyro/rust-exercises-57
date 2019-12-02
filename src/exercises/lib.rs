@@ -1,8 +1,8 @@
 extern crate chrono;
 extern crate rand;
 extern crate regex;
-extern crate serde_derive;
 extern crate serde;
+extern crate serde_derive;
 extern crate serde_json;
 
 #[path = "./one/hello_world.rs"]
@@ -40,3 +40,6 @@ pub mod self_checkout_main;
 
 #[path = "./eleven/currency_converter.rs"]
 pub mod currency_converter_main;
+
+#[path = "./twelve/compute_interest.rs"]
+pub mod compute_interest_main;
