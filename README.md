@@ -20,16 +20,16 @@ I have created the project in Rust with a command line to allow choosing of what
 - Pizza Party
 - Paint Calculator
 - Self Checkout
+- Currency Converter
+- Compute interest
 
 ## In progress
 
 - Complete commandline to select programs
-- Currency Converter
+- Bill Spliter
 
 ## Backlog
 
-- Compute interest
-- Tax Calculator
 - Password Validator
 - Parse File
 - Website Generator
