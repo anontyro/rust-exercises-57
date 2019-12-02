@@ -43,3 +43,6 @@ pub mod currency_converter_main;
 
 #[path = "./twelve/compute_interest.rs"]
 pub mod compute_interest_main;
+
+#[path = "./fourteen/bill_splitter.rs"]
+pub mod bill_splitter_main;
