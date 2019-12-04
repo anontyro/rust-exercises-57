@@ -19,6 +19,22 @@ pub mod general_utils {
     return user_input.trim().to_string();
   }
 
+  pub fn get_bool_user_input(prompt_msg: String) -> bool {
+    let bool_msg = "Please enter y or n".to_string();
+    println!("{}:", prompt_msg);
+    let user_input = get_user_input(bool_msg);
+
+    match user_input.as_ref() {
+      "y" => true,
+      "yes" => true,
+      "Y" => true,
+      "n" => false,
+      "no" => false,
+      "N" => false,
+      _ => panic!("Unable to find boolean from value"),
+    }
+  }
+
   pub fn get_number_from_input(prompt_msg: String) -> i32 {
     let mut first_number = 0;
     let first_input = get_user_input(prompt_msg);
