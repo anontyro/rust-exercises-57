@@ -25,7 +25,29 @@
  */
 
 pub mod bill_splitter {
+  extern crate serde;
+  extern crate serde_derive;
+  extern crate serde_json;
+
+  use serde_derive::{Deserialize, Serialize};
+  use std::fs;
+
+  #[derive(Serialize, Deserialize, Debug)]
+  struct CountryTaxes {
+    sales_tax: f32,
+    service_charge: f32,
+  }
+
+  #[derive(Serialize, Deserialize, Debug)]
+  struct CountryPresets {
+    singapore: CountryTaxes,
+    uk: CountryTaxes,
+  }
+
   pub fn main() {
     println!("Bill Splitter");
+    let preset_data =
+      fs::read_to_string("./presets.json").expect("Unable to read file presets.json");
+    let presets: CountryPresets = serde_json::from_str(&preset_data).expect("JSON formating error");
   }
 }

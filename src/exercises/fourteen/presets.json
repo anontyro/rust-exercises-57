@@ -1,0 +1,10 @@
+{
+  "singapore": {
+    "sales_tax": 7.0,
+    "service_charge": 10.0
+  },
+  "uk": {
+    "sales_tax": 20.0,
+    "service_charge": 12.5
+  }
+}
