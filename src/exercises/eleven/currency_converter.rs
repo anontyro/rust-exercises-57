@@ -23,6 +23,7 @@ pub mod currency_converter {
   use serde_derive::{Deserialize, Serialize};
   // use std::thread;
 
+  #[allow(non_snake_case)]
   #[derive(Serialize, Deserialize, Debug)]
   struct CurrencyRates {
     CAD: f64,
