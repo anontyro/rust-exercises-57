@@ -22,15 +22,15 @@ I have created the project in Rust with a command line to allow choosing of what
 - Self Checkout
 - Currency Converter
 - Compute interest
+- Bill Spliter
 
 ## In progress
 
 - Complete commandline to select programs
-- Bill Spliter
+- Password Validator
 
 ## Backlog
 
-- Password Validator
 - Parse File
 - Website Generator
 - Product search

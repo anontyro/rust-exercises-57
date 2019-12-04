@@ -14,5 +14,7 @@
 
 pub mod password_generator {
 
-  pub fn main() {}
+  pub fn main() {
+    println!("Password Generator");
+  }
 }

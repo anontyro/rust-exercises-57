@@ -14,5 +14,6 @@ fn main() {
     // main_lib::self_checkout_main::self_checkout::main();
     // main_lib::currency_converter_main::currency_converter::main();
     // main_lib::compute_interest_main::compute_interest::main();
-    main_lib::bill_splitter_main::bill_splitter::main();
+    // main_lib::bill_splitter_main::bill_splitter::main();
+    main_lib::password_generator_main::password_generator::main();
 }

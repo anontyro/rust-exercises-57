@@ -46,3 +46,6 @@ pub mod compute_interest_main;
 
 #[path = "./fourteen/bill_splitter.rs"]
 pub mod bill_splitter_main;
+
+#[path = "./thirtySeven/password_generator.rs"]
+pub mod password_generator_main;
