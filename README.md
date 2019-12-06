@@ -23,10 +23,10 @@ I have created the project in Rust with a command line to allow choosing of what
 - Currency Converter
 - Compute interest
 - Bill Spliter
+- Complete commandline to select programs
 
 ## In progress
 
-- Complete commandline to select programs
 - Password Validator
 
 ## Backlog
