@@ -29,7 +29,7 @@ pub mod bill_splitter {
   extern crate serde_derive;
   extern crate serde_json;
 
-  use general_utils_main::general_utils::{
+  use crate::general_utils_main::general_utils::{
     get_bool_user_input, get_float_from_input, get_user_input,
   };
   use serde_derive::{Deserialize, Serialize};

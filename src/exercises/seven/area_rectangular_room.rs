@@ -14,7 +14,7 @@
  */
 
 pub mod area_rectangular_room {
-  use general_utils_main::general_utils::{get_number_from_input, get_user_input};
+  use crate::general_utils_main::general_utils::{get_number_from_input, get_user_input};
 
   pub fn main() {
     println!("AREA OF A RECTANGULAR ROOM");

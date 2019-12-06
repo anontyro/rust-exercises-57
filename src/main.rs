@@ -1,7 +1,10 @@
 extern crate main_lib;
 
+// use crate::main_lib::general_utils_main::general_utils::{get_user_input};
+
 fn main() {
     println!("Program started");
+
     // main_lib::hello_main::hello_world::main();
     // main_lib::counting_char_main::counting_characters::main();
     // main_lib::printing_quotes_main::printing_quotes::main();
@@ -14,6 +17,6 @@ fn main() {
     // main_lib::self_checkout_main::self_checkout::main();
     // main_lib::currency_converter_main::currency_converter::main();
     // main_lib::compute_interest_main::compute_interest::main();
-    // main_lib::bill_splitter_main::bill_splitter::main();
+    main_lib::bill_splitter_main::bill_splitter::main();
     main_lib::password_generator_main::password_generator::main();
 }

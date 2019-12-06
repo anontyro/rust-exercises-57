@@ -13,7 +13,7 @@
  */
 
 pub mod self_checkout {
-  use general_utils_main::general_utils::{get_float_from_input, get_user_input};
+  use crate::general_utils_main::general_utils::{get_float_from_input, get_user_input};
   use std::collections::HashMap;
 
   pub fn main() {

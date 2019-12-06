@@ -17,7 +17,7 @@
  */
 
 pub mod paint_calculator {
-  use general_utils_main::general_utils::get_number_from_input;
+  use crate::general_utils_main::general_utils::get_number_from_input;
 
   pub fn main() {
     println!("PAINT CALCULATOR");

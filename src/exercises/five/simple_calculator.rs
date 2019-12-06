@@ -9,7 +9,7 @@
  */
 
 pub mod simple_calculator {
-  use general_utils_main::general_utils::get_user_input;
+  use crate::general_utils_main::general_utils::get_user_input;
   use regex::Regex;
 
   pub fn main() {

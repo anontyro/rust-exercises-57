@@ -20,7 +20,7 @@
  */
 
 pub mod mad_libs {
-  use general_utils_main::general_utils::get_user_input;
+  use crate::general_utils_main::general_utils::get_user_input;
 
   struct WordTypes<'a> {
     noun: &'a str,

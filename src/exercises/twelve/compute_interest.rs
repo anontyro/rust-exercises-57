@@ -22,7 +22,7 @@
 
 pub mod compute_interest {
 
-  use general_utils_main::general_utils::get_float_from_input;
+  use crate::general_utils_main::general_utils::get_float_from_input;
 
   pub fn main() {
     println!("Compute Interest in USD");

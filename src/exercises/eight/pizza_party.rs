@@ -17,7 +17,7 @@
  */
 
 pub mod pizza_party {
-  use general_utils_main::general_utils::get_number_from_input;
+  use crate::general_utils_main::general_utils::get_number_from_input;
 
   pub fn main() {
     println!("PIZZA PARTY!!!");
