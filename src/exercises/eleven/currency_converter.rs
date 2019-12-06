@@ -14,10 +14,10 @@
  */
 
 pub mod currency_converter {
-  extern crate reqwest;
-  extern crate serde;
-  extern crate serde_derive;
-  extern crate serde_json;
+  use reqwest;
+  
+  use serde_derive;
+  
 
   use crate::general_utils_main::general_utils::{get_float_from_input, get_user_input};
   use serde_derive::{Deserialize, Serialize};

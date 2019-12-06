@@ -25,9 +25,8 @@
  */
 
 pub mod bill_splitter {
-  extern crate serde;
-  extern crate serde_derive;
-  extern crate serde_json;
+  use serde_derive;
+  use serde_json;
 
   use crate::general_utils_main::general_utils::{
     get_bool_user_input, get_float_from_input, get_user_input,
@@ -49,8 +48,9 @@ pub mod bill_splitter {
 
   pub fn main() {
     println!("Bill Splitter");
-    let preset_data =
-      fs::read_to_string("./presets.json").expect("Unable to read file presets.json");
+
+    let preset_data = fs::read_to_string("./src/exercises/fourteen/presets.json")
+      .expect("Unable to read file presets.json");
     let presets: CountryPresets = serde_json::from_str(&preset_data).expect("JSON formating error");
 
     let user_country = get_user_input("Select a country to get sales tax from: ".to_string());

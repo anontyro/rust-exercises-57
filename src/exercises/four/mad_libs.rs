@@ -48,7 +48,7 @@ pub mod mad_libs {
     println!("{}", mad_lib);
   }
 
-  fn create_mad_lib(words: &WordTypes) -> String {
+  fn create_mad_lib(words: &WordTypes<'_>) -> String {
     let mad_lib_template = "Do you VERB your ADJECTIVE NOUN ADVERB? That's hilarious!";
 
     let mut output = mad_lib_template.replace("ADJECTIVE", words.adjective);

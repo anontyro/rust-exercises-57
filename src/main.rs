@@ -1,4 +1,4 @@
-extern crate main_lib;
+use main_lib;
 
 // use crate::main_lib::general_utils_main::general_utils::{get_user_input};
 
