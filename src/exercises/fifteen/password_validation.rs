@@ -12,5 +12,13 @@
  */
 
 pub mod password_validation {
-  pub fn main() {}
+
+  use crate::general_utils_main::general_utils::get_user_password;
+  // use magic_crypt::MagicCrypt;
+
+  pub fn main() {
+    println!("Password Validator");
+    let password = get_user_password(String::from("Enter password:"));
+    println!("password: {}", password);
+  }
 }
