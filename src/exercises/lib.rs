@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 #[path = "./one/hello_world.rs"]
 pub mod hello_main;
 
@@ -46,6 +39,9 @@ pub mod compute_interest_main;
 
 #[path = "./fourteen/bill_splitter.rs"]
 pub mod bill_splitter_main;
+
+#[path = "./fifteen/password_validation.rs"]
+pub mod password_validation_main;
 
 #[path = "./thirtySeven/password_generator.rs"]
 pub mod password_generator_main;

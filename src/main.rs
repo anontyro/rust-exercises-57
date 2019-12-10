@@ -31,7 +31,8 @@ fn user_program_selector() -> i32 {
     ( 11 ) Currency Converter
     ( 12 ) Compute Interest
     ( 13 ) Bill Splitter
-    ( 14 ) Password Generator
+    ( 14 ) Password Validator
+    ( 15 ) Password Generator
     "
     );
     let user_number = get_number_from_input(String::from("Your Selection:"));
@@ -54,7 +55,8 @@ fn select_program_to_run(user_number: i32) {
         11 => main_lib::currency_converter_main::currency_converter::main(),
         12 => main_lib::compute_interest_main::compute_interest::main(),
         13 => main_lib::bill_splitter_main::bill_splitter::main(),
-        14 => main_lib::password_generator_main::password_generator::main(),
+        14 => main_lib::password_validation_main::password_validation::main(),
+        15 => main_lib::password_generator_main::password_generator::main(),
         _ => panic!("Unable to select the correct program"),
     }
 }
