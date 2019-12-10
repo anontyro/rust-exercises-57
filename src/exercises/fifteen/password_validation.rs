@@ -12,13 +12,43 @@
  */
 
 pub mod password_validation {
+  use crate::encryption_utils_main::encryption_utils::{
+    decrypt_string_base64, encrypt_string_base64,
+  };
+  use crate::general_utils_main::general_utils::{get_user_input, get_user_password};
+  use std::path::Path;
 
-  use crate::general_utils_main::general_utils::get_user_password;
-  // use magic_crypt::MagicCrypt;
+  pub struct UserData {
+    username: String,
+    password: String,
+  }
 
   pub fn main() {
     println!("Password Validator");
-    let password = get_user_password(String::from("Enter password:"));
-    println!("password: {}", password);
+    let user_values = get_user_data();
+    if check_file_exists() {
+      // open file and read
+      // check for username to match
+      // if none match return
+    } else {
+      // create new file
+      // add user values as an object {username: username, password: password, data: {}}
+    }
+  }
+
+  pub fn check_file_exists() -> bool {
+    Path::new("./src/exercises/fifteen/store.json").exists()
+  }
+
+  pub fn get_user_data() -> UserData {
+    let username = get_user_input(String::from("Enter username: "));
+    let password = get_user_password(String::from("Enter password: "));
+    let encrypted_password = encrypt_string_base64(password);
+
+    let results = UserData {
+      username,
+      password: encrypted_password,
+    };
+    results
   }
 }
