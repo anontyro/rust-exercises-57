@@ -12,6 +12,8 @@ reqwest = "0.9.18"
 serde = "*"
 serde_json = "*"
 serde_derive = "*"
+rpassword = "4.0.3"
+magic-crypt = "2.1.7"
 
 [lib]
 name="main_lib"

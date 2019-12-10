@@ -4,6 +4,7 @@
  */
 
 pub mod general_utils {
+  extern crate rpassword;
   use std::io;
   use std::process::exit;
 
@@ -17,6 +18,13 @@ pub mod general_utils {
       .expect("Unable to read user selection");
 
     return user_input.trim().to_string();
+  }
+
+  pub fn get_user_password(prompt_msg: String) -> String {
+    println!("{}:", prompt_msg);
+
+    let password = rpassword::read_password_from_tty(None).unwrap();
+    return password.trim().to_string();
   }
 
   pub fn get_bool_user_input(prompt_msg: String) -> bool {
