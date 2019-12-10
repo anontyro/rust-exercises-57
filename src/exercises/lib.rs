@@ -1,3 +1,15 @@
+#[macro_use]
+extern crate magic_crypt;
+// UTILS
+
+#[path = "../utils/general_utils.rs"]
+pub mod general_utils_main;
+
+#[path = "../utils/encryption_utils.rs"]
+pub mod encryption_utils_main;
+
+// PROGRAMS
+
 #[path = "./one/hello_world.rs"]
 pub mod hello_main;
 
@@ -12,9 +24,6 @@ pub mod mad_libs_main;
 
 #[path = "./five/simple_calculator.rs"]
 pub mod simple_calculator_main;
-
-#[path = "../utils/general_utils.rs"]
-pub mod general_utils_main;
 
 #[path = "./six/retirement_calculator.rs"]
 pub mod retirement_calculator_main;
